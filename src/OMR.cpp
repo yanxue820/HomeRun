@@ -33,7 +33,9 @@ auto read_test_options(int32_t argcp, char **argvp)
   ("address,a",      po::value<decltype(context.address)>(&context.address)->default_value("127.0.0.1"),            "IP address of the server")
   ("port,p",         po::value<decltype(context.port)>(&context.port)->default_value(7777),                         "Port of the server")
   ("radix,m",    po::value<decltype(context.radix)>(&context.radix)->default_value(5u),                             "Radix in PSM Protocol")
-  ("nthreads,t",    po::value<decltype(context.nthr)>(&context.nthr)->default_value(1),                             "Number of threads");
+  ("nthreads,t",    po::value<decltype(context.nthr)>(&context.nthr)->default_value(1),                             "Number of threads")
+  ("days,d",    po::value<decltype(context.day)>(&context.day)->default_value(1),                             "Number of days")
+  ("rate,c",    po::value<decltype(context.rate)>(&context.rate)->default_value(1),                             "Remaining rate");
   //("bandwidth,w",    po::value<decltype(context.bandwidth)>(&context.bandwidth)->default_value("10gbit"),                             "Bandwidth")
   //("delay,l",    po::value<decltype(context.delay)>(&context.delay)->default_value("0.01ms"),                             "Delay");  //half of RTT
 
@@ -61,7 +63,16 @@ auto read_test_options(int32_t argcp, char **argvp)
     exit(EXIT_SUCCESS);
   }
 
-  context.neles = 1ull << context.logN;
+  //context.neles = (1ull << context.logN)*context.day;
+
+  double number=0;
+  for (int i=context.day;i>0;i--){
+    number=number+(1ull << context.logN)*pow(context.rate,i);
+  }
+
+
+  context.neles=static_cast<int>(number/ 8) * 8 ;
+  //context.neles = context.day*static_cast<int>((static_cast<unsigned long long>(1ull << context.logN) * context.rate)) / 8 * 8;
   std::cout << "number of elements:" << context.neles << "\n";
   std::cout << "role:" << context.role << "\n";
 

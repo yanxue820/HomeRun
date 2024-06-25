@@ -13,6 +13,8 @@ struct OMRContext {
   //uint64_t nfuns;  // number of hash functions in the hash table
   uint64_t radix;
   int nthr;
+  int day;
+  double rate;
  // double epsilon;
   //uint64_t ffuns;
   //uint64_t fbins;

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../lib/libsrc.a CMakeFiles/src.dir/common/functionalities.cpp.o CMakeFiles/src.dir/common/roles_functionalities.cpp.o
+/usr/bin/ranlib ../lib/libsrc.a

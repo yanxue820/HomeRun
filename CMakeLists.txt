@@ -2,6 +2,9 @@ project(PSI_ANALYTICS)
 cmake_minimum_required(VERSION 3.13)
 cmake_policy(SET CMP0077 NEW)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 list(APPEND CMAKE_PREFIX_PATH "/usr/local/lib/cmake/volePSI")
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake")
