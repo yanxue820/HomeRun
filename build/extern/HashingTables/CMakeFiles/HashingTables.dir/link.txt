@@ -1,2 +1,0 @@
-/usr/bin/ar qc libHashingTables.a CMakeFiles/HashingTables.dir/common/hash_table_entry.cpp.o CMakeFiles/HashingTables.dir/common/hashing.cpp.o CMakeFiles/HashingTables.dir/cuckoo_hashing/cuckoo_hashing.cpp.o CMakeFiles/HashingTables.dir/simple_hashing/simple_hashing.cpp.o
-/usr/bin/ranlib libHashingTables.a

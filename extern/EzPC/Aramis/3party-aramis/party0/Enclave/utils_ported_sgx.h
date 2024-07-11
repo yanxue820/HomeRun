@@ -1,5 +1,0 @@
-#include "../utils_sgx_port/parsed_circuitfile.h"
-//#include "../utils_sgx_port/utils_time_sgx.h"
-#include "../utils_sgx_port/utils_rand_sgx.h"
-#include "../utils_sgx_port/utils_print_sgx.h"
-#include "../utils_sgx_port/port_utils_sgx.h"

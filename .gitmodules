@@ -1,6 +1,3 @@
-[submodule "extern/ABY"]
-	path = extern/ABY
-	url = https://github.com/encryptogroup/ABY.git
 [submodule "extern/HashingTables"]
 	path = extern/HashingTables
 	url = https://github.com/Oleksandr-Tkachenko/HashingTables.git
@@ -13,3 +10,6 @@
 [submodule "extern/EzPC"]
 	path = extern/EzPC
 	url = https://github.com/shahakash28/EzPC-Aligned.git
+[submodule "extern/ABY"]
+	path = extern/ABY
+	url = https://github.com/encryptogroup/ABY.git
