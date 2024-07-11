@@ -27,6 +27,20 @@ make
 // or make -j for faster compilation
 ```
 
+## Potential Compile Errors
+```
+extern/EzPC/SCI/extern/SEAL/native/src/seal/util/locks.h:17:33: 
+error: ‘WriterLock’ does not name a type
+```
+[Solution] Add `#include <mutex>` to "extern/EzPC/SCI/extern/SEAL/native/src/seal/util/locks.h"
+
+```
+extern/ABY/extern/ENCRYPTO_utils/src/ENCRYPTO_utils/constants.h:24:10: 
+fatal error: cmake_constants.h: No such file or directory
+```
+[Solution] Copy `cmake_constants.h` from "build/extern/ABY/extern/ENCRYPTO_utils/include" to "extern/ABY/extern/ENCRYPTO_utils/src/ENCRYPTO_utils" (the folder where locks.h is located), and change `#include <cmake_constants.h>` to `#include "cmake_constants.h"`.
+
+
 ## Run
 Run from `build` directory.
 Example:
@@ -50,17 +64,5 @@ Description of Parameters:
 ## Execution Environment
 The code was tested on Ubuntu 22.04.3 LTS.
 
-## Potential Compile Errors
-```
-extern/EzPC/SCI/extern/SEAL/native/src/seal/util/locks.h:17:33: 
-error: ‘WriterLock’ does not name a type
-```
-[Solution] Add `#include <mutex>` to "extern/EzPC/SCI/extern/SEAL/native/src/seal/util/locks.h"
-
-```
-extern/ABY/extern/ENCRYPTO_utils/src/ENCRYPTO_utils/constants.h:24:10: 
-fatal error: cmake_constants.h: No such file or directory
-```
-[Solution] Copy `cmake_constants.h` from "build/extern/ABY/extern/ENCRYPTO_utils/include" to "extern/ABY/extern/ENCRYPTO_utils/src/ENCRYPTO_utils" (the folder where locks.h is located), and change `#include <cmake_constants.h>` to `#include "cmake_constants.h"`.
 
 
