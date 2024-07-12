@@ -10,6 +10,7 @@ Code based on the implementation of 2-Party Circuit-PSI available at \[[PETS22](
  - libntl-dev
  - pkg-config
  - libglib2.0-dev
+ - libtool
  
 [install volePSI]
  - git clone https://github.com/Visa-Research/volepsi.git

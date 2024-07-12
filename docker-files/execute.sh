@@ -1,14 +1,24 @@
 #!/bin/bash
-wget -O boost_1_74_0.tar.gz https://sourceforge.net/projects/boost/files/boost/1.74.0/boost_1_74_0.tar.gz/download
-tar xzvf boost_1_74_0.tar.gz
-cd boost_1_74_0
-./bootstrap.sh --prefix=/usr/
-./b2
-./b2 install
+
+wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.gz
+tar -xzf boost_1_77_0.tar.gz
+cd boost_1_77_0
+./bootstrap.sh
+./b2 stage --toolset=gcc --with=all
+./b2 install --toolset=gcc --with=all
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
 cd ..
-git clone https://github.com/shahakash28/2PC-Circuit-PSI.git
-cd 2PC-Circuit-PSI
+
+git clone https://github.com/Visa-Research/volepsi.git
+cd volepsi
+python3 build.py -DVOLE_PSI_ENABLE_BOOST=ON
+python3 build.py --install
+
+cd ..
+
+git clone https://github.com/yanxue820/HomeRun.git
+cd HomeRun
 mkdir build && cd build
 cmake ..
-cp ../aux_hash/* ../extern/HashingTables/cuckoo_hashing/.
 make
