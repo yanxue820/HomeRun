@@ -22,3 +22,12 @@ cd HomeRun
 mkdir build && cd build
 cmake ..
 make
+
+cd ..
+
+sed -i '5a#include <mutex>' extern/EzPC/SCI/extern/SEAL/native/src/seal/util/locks.h
+sed -i '24c#include "cmake_constants.h"' extern/ABY/extern/ENCRYPTO_utils/src/ENCRYPTO_utils/constants.h
+cp build/extern/ABY/extern/ENCRYPTO_utils/include/cmake_constants.h extern/ABY/extern/ENCRYPTO_utils/src/ENCRYPTO_utils
+
+cd build
+make

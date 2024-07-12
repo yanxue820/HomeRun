@@ -41,6 +41,14 @@ fatal error: cmake_constants.h: No such file or directory
 ```
 [Solution] Copy `cmake_constants.h` from "build/extern/ABY/extern/ENCRYPTO_utils/include" to "extern/ABY/extern/ENCRYPTO_utils/src/ENCRYPTO_utils" (the folder where locks.h is located), and change `#include <cmake_constants.h>` to `#include "cmake_constants.h"`.
 
+## Using Docker
+```
+cd docker-files
+docker build -t homerun .
+docker run -it homerun bash
+chmod +x execute.sh
+./execute.sh
+```
 
 ## Run
 Run from `build` directory.

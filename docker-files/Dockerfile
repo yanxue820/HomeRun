@@ -14,4 +14,5 @@ RUN apt-get -y install libntl-dev
 RUN apt-get -y install cmake
 RUN apt-get -y install libtool
 RUN apt-get -y install python3-dev autotools-dev libicu-dev libbz2-dev
+RUN apt-get -y install sed
 COPY execute.sh .
