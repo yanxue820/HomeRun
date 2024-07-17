@@ -46,7 +46,7 @@ namespace ENCRYPTO
             std::vector<std::thread> threads;
             size_t chunk_size = labelS.size() / context.nthr;
             size_t rmdr_size = labelS.size() % context.nthr;
-            std::cout << "rmdr=" << rmdr_size << "\n";
+            //std::cout << "rmdr=" << rmdr_size << "\n";
             uint8_t *res_shares = new uint8_t[labelS.size()];
             double *offline_time = new double[context.nthr];
             uint64_t *triples_comm = new uint64_t[context.nthr];

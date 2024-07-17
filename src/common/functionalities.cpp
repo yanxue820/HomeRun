@@ -471,7 +471,7 @@ namespace ENCRYPTO
     }
     const auto preLabels_end_time = std::chrono::high_resolution_clock::now();
     preLabels_duration=preLabels_end_time-preLabels_start_time;
-    std::cout<<"Time for preparing the labels in this thread: "<<preLabels_duration.count()*1000<<" ms\n";
+    //std::cout<<"Time for preparing the labels in this thread: "<<preLabels_duration.count()*1000<<" ms\n";
     BN_CTX_free(ctx);
 
     int party = 1;
@@ -496,7 +496,7 @@ namespace ENCRYPTO
     std::chrono::duration<double> preIndex_duration = std::chrono::duration<double>::zero();
     
     preIndex_duration=preIndex_end_time-preLabels_start_time;
-    std::cout<<"Time for preparing the indexes in this thread: "<<preIndex_duration.count()*1000<<" ms\n";
+    //std::cout<<"Time for preparing the indexes in this thread: "<<preIndex_duration.count()*1000<<" ms\n";
   }
 
   // convert a EC point to uint64

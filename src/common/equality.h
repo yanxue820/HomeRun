@@ -263,7 +263,7 @@ void equality_thread(int party, uint64_t *x, uint8_t *z, int lnum_cmps, int l, i
 	const auto OT_end_time = std::chrono::system_clock::now();
 	auto OT_duration = duration_cast<milliseconds>(OT_end_time - OT_start_time);
 	//context.timings.transform_subtime = double(OT_duration.count());
-	std::cout << "party-" << party << ": Time for transform:" << double(OT_duration.count()) << " ms\n";
+	//std::cout << "party-" << party << ": Time for transform:" << double(OT_duration.count()) << " ms\n";
 
 	const auto triples_start_time = std::chrono::system_clock::now();
 	compare->generate_triples();
@@ -271,7 +271,7 @@ void equality_thread(int party, uint64_t *x, uint8_t *z, int lnum_cmps, int l, i
 	auto triples_duration = duration_cast<milliseconds>(triples_end_time - triples_start_time);
 	//context.timings.triple_subtime = double(triples_duration.count());
 	triples_comm=io->counter;
-	std::cout << "party-" << party << ": Time for triples:" << double(triples_duration.count()) << " ms\n";
+	//std::cout << "party-" << party << ": Time for triples:" << double(triples_duration.count()) << " ms\n";
 	offline_time=double(triples_duration.count());
 	//std::copy(offline_time, offline_time + 1, double(triples_duration.count()));
 
@@ -282,7 +282,7 @@ void equality_thread(int party, uint64_t *x, uint8_t *z, int lnum_cmps, int l, i
 	//context.timings.ands_subtime = double(AND_duration.count());
 	PET_comm=io->counter;
 	//context.PETonline_subcomm=context.PET_comm-context.triples_subcomm;
-	std::cout << "party-" << party << ": Time for ANDs:" << double(AND_duration.count()) << " ms\n";
+	//std::cout << "party-" << party << ": Time for ANDs:" << double(AND_duration.count()) << " ms\n";
 
 	cout << "Got resultant shares of PET ..." << endl;
 	// ofstream res_file;

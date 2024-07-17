@@ -39,7 +39,7 @@ error: ‘WriterLock’ does not name a type
 extern/ABY/extern/ENCRYPTO_utils/src/ENCRYPTO_utils/constants.h:24:10: 
 fatal error: cmake_constants.h: No such file or directory
 ```
-[Solution] Copy `cmake_constants.h` from "build/extern/ABY/extern/ENCRYPTO_utils/include" to "extern/ABY/extern/ENCRYPTO_utils/src/ENCRYPTO_utils" (the folder where locks.h is located), and change `#include <cmake_constants.h>` to `#include "cmake_constants.h"`.
+[Solution] Copy `cmake_constants.h` from "build/extern/ABY/extern/ENCRYPTO_utils/include" to "extern/ABY/extern/ENCRYPTO_utils/src/ENCRYPTO_utils" (the folder where constants.h is located), and change `#include <cmake_constants.h>` to `#include "cmake_constants.h"`.
 
 ## Using Docker
 ```
