@@ -68,6 +68,8 @@ Description of Parameters:
 -b: bitlength (the bit length for PET, set to 64)
 -m: radix for PET (set to 1)
 -t: number of threads
+-d: which day
+-c: remaining rate
 ```
 
 ## Execution Environment
