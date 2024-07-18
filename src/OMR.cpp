@@ -67,7 +67,8 @@ auto read_test_options(int32_t argcp, char **argvp)
 
   double number=0;
   for (int i=context.day;i>0;i--){
-    number=number+(1ull << context.logN)*pow(context.rate,i);
+    number=number+(1ull << context.logN)*pow(context.rate,i);  
+    // pow(context.rate,i) is used for after deletion; pow(context.rate,i-1) is used for before deletion
   }
 
 

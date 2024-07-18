@@ -379,7 +379,7 @@ namespace ENCRYPTO
         chlR[0].send(proof0_serialized.data(), proof0_serialized.size());
         chlR[1].send(proof1_serialized.data(), proof1_serialized.size());
 
-        std::cout << "The total size of the retrieval request (labels and proofs): " << chlR[0].getTotalDataSent() + chlR[1].getTotalDataSent() << " bytes\n";
+        //std::cout << "The total size of the retrieval request (labels and proofs): " << chlR[0].getTotalDataSent() + chlR[1].getTotalDataSent() << " bytes\n";
 
         //****************receive the results of Private Equality Test (PET) and recover the indexes
         std::vector<uint8_t> byteData0((context.neles + 7) / 8);
